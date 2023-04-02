@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+}
+
+$grisLight : rgba(128, 128, 128, 0.264);
+$bleue : rgb(89, 49, 200);
+$rouge : red;
+
+$breakpoints: (
+  dekstop: 500px
+);
+
+@mixin large-screen {
+    @media screen and (min-width: map-get($breakpoints, dekstop)){
+        @content;
+    }
+}
+    
+
+body{
+    background: hsl(0, 0%, 86%);
+    margin: 0;
+    padding: 0 15px;
+    // font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    text-align: center;
+    margin: 40px auto 0 auto;
+    background-color: $bleue;
+    max-width: 700px;
+    padding: 1px 0;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    border-radius: 10px;
+    font-size: .7em;
+    @include large-screen(){
+        font-size: 1em;
+    }
+}
+
+main{
+    padding: 40px 15px;
+    max-width: 700px;
+    margin: 70px auto;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 20px 20px 120px;
+    position: relative;
+    @include large-screen(){
+        padding: 33px 40px 33px;
+    }
+}
+
+.form{
+    .container-date{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+        @include large-screen(){
+            flex-direction: row;
+        }
+        label {
+            font-weight: bold;
+            color: rgb(87, 85, 85);
+            font-size: .7em;
+            letter-spacing: 2px;
+            font-family: 'Poppins', sans-serif;
+            &.label-error{
+                color: $rouge;
+            }
+            @include large-screen(){
+                font-size: 0.9em;
+            }
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 1em;
+            font-family: 'Poppins', sans-serif;            ;
+            font-weight: bold;
+            border: 1px solid $grisLight;
+            border-radius: 5px;
+            &.border-error{
+                border: 1px solid $rouge;
+            }
+            @include large-screen(){
+                width: 120px;
+                font-size: 1.2em;
+            }
+        }
+        &::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $grisLight;
+            position: absolute;
+            bottom: -50px;
+            @include large-screen(){
+                width: 95%;
+            }
+        }
+
+        .error-field, .error-valid{
+            color: $rouge;
+            font-size: .6em;
+            display: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+    }
+    .btn-image{
+        padding: 15px;
+        background-color: $bleue;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 40%);
+        @include large-screen(){
+            left: 90%;
+        }
+    }
+
+}
+
+.show-age{
+    margin-top: 130px;
+    p{
+        font-weight: bold;
+        font-size: 2em;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        font-style: italic;
+        line-height: 1.2em;
+    }
+    @include large-screen(){
+        font-size: 2em;
+    }
+    span{
+        color: $bleue;
+    }
+}
+
+footer{
+    max-width: 700px;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+    span{
+        font-style: italic;
+    }
+}
+
+
+
