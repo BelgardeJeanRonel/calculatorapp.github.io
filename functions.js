@@ -44,7 +44,7 @@ export function conditionsFor31Days(day, month, year, errorsField, errorsValid, 
     label[1].classList.remove("label-error");
 
 
-    if (parseInt(month) > 0 && parseInt(month) < 13){
+    if (Number(month) > 0 && Number(month) < 13){
         errorsValid[1].style.display = "none";
         input[1].classList.remove("border-error");
         label[1].classList.remove("label-error");
@@ -55,7 +55,7 @@ export function conditionsFor31Days(day, month, year, errorsField, errorsValid, 
         input[0].classList.add("border-error");
         label[0].classList.add("label-error");
         errorsValid[0].style.display = 'none';
-    }else if (parseInt(day) < 0 || parseInt(day) > 31 ||  day !== "" && isNaN(day)){
+    }else if (Number(day) < 0 || Number(day) > 31 ||  day !== "" && isNaN(day) || !Number.isInteger(day)){
         errorsValid[0].style.display = 'block';
         errorsField[0].style.display = "none";
         input[0].classList.add("border-error");
@@ -73,7 +73,7 @@ export function conditionsFor31Days(day, month, year, errorsField, errorsValid, 
         input[2].classList.add("border-error");
         label[2].classList.add("label-error");
         errorsValid[2].style.display = 'none';
-    }else if (parseInt(year) > (new Date().getFullYear()) ||  year !== "" && isNaN(year)){
+    }else if (Number(year) > (new Date().getFullYear()) ||  year !== "" && isNaN(year) || !Number.isInteger(year)){
         errorsField[2].style.display = "none";
         errorsValid[2].style.display = 'block';
         input[2].classList.add("border-error");
@@ -94,7 +94,7 @@ export function conditionsFor29Days(day, month, year, errorsField, errorsValid, 
     label[1].classList.remove("label-error");
 
     
-    if (parseInt(month) > 0 && parseInt(month) < 13){
+    if (Number(month) > 0 && Number(month) < 13){
         errorsValid[1].style.display = "none";
         input[1].classList.remove("border-error");
         label[1].classList.remove("label-error");
@@ -105,7 +105,7 @@ export function conditionsFor29Days(day, month, year, errorsField, errorsValid, 
         input[0].classList.add("border-error");
         label[0].classList.add("label-error");
         errorsValid[0].style.display = 'none';
-    }else if (parseInt(day) < 0 || parseInt(day) > 29 ||  day !== "" && isNaN(day)){
+    }else if (Number(day) < 0 || Number(day) > 29 ||  day !== "" && isNaN(day) || !Number.isInteger(day)){
         errorsValid[0].style.display = 'block';
         errorsField[0].style.display = "none";
         input[0].classList.add("border-error");
@@ -123,7 +123,7 @@ export function conditionsFor29Days(day, month, year, errorsField, errorsValid, 
         input[2].classList.add("border-error");
         label[2].classList.add("label-error");
         errorsValid[2].style.display = 'none';
-    }else if (parseInt(year) > (new Date().getFullYear()) ||  year !== "" && isNaN(year)){
+    }else if (parseInt(year) > (new Date().getFullYear()) ||  year !== "" && isNaN(year) || !Number.isInteger(year)){
         errorsField[2].style.display = "none";
         errorsValid[2].style.display = 'block';
         input[2].classList.add("border-error");
@@ -144,7 +144,7 @@ export function conditionsFor30Days(day, month, year, errorsField, errorsValid, 
     label[1].classList.remove("label-error");
 
     
-    if (parseInt(month) > 0 && parseInt(month) < 13){
+    if (Number(month) > 0 && Number(month) < 13){
         errorsValid[1].style.display = "none";
         input[1].classList.remove("border-error");
         label[1].classList.remove("label-error");
@@ -155,7 +155,7 @@ export function conditionsFor30Days(day, month, year, errorsField, errorsValid, 
         input[0].classList.add("border-error");
         label[0].classList.add("label-error");
         errorsValid[0].style.display = 'none';
-    }else if (parseInt(day) < 0 || parseInt(day) > 30 ||  day !== "" && isNaN(day)){
+    }else if (parseInt(day) < 0 || parseInt(day) > 30 ||  day !== "" && isNaN(day) || !Number.isInteger(day)){
         errorsValid[0].style.display = 'block';
         errorsField[0].style.display = "none";
         input[0].classList.add("border-error");
@@ -173,7 +173,7 @@ export function conditionsFor30Days(day, month, year, errorsField, errorsValid, 
         input[2].classList.add("border-error");
         label[2].classList.add("label-error");
         errorsValid[2].style.display = 'none';
-    }else if (parseInt(year) > (new Date().getFullYear()) ||  year !== "" && isNaN(year)){
+    }else if (parseInt(year) > (new Date().getFullYear()) ||  year !== "" && isNaN(year) || !Number.isInteger(year)){
         errorsField[2].style.display = "none";
         errorsValid[2].style.display = 'block';
         input[2].classList.add("border-error");
@@ -193,7 +193,7 @@ export function conditionsElse(day, month, year, errorsField, errorsValid, input
         input[1].classList.add("border-error");
         label[1].classList.add("label-error");
         errorsValid[1].style.display = 'none';
-    }else if (parseInt(month) < 1 || parseInt(month) > 12 ||  month !== "" && isNaN(month)){
+    }else if (Number(month) < 1 || Number(month) > 12 ||  month !== "" && isNaN(month) || !Number.isInteger(month)){
         errorsField[1].style.display = "none";
         input[1].classList.add("border-error");
         label[1].classList.add("label-error");
@@ -210,7 +210,7 @@ export function conditionsElse(day, month, year, errorsField, errorsValid, input
         input[0].classList.add("border-error");
         label[0].classList.add("label-error");
         errorsValid[0].style.display = 'none';
-    }else if (parseInt(day) < 0 || parseInt(day) > 31 ||  day !== "" && isNaN(day)){
+    }else if (Number(day) < 0 || Number(day) > 31 ||  day !== "" && isNaN(day) || !Number.isInteger(day)){
         errorsValid[0].style.display = 'block';
         errorsField[0].style.display = "none";
         input[0].classList.add("border-error");
@@ -228,7 +228,7 @@ export function conditionsElse(day, month, year, errorsField, errorsValid, input
         input[2].classList.add("border-error");
         label[2].classList.add("label-error");
         errorsValid[2].style.display = 'none';
-    }else if (parseInt(year) > (new Date().getFullYear()) ||  year !== "" && isNaN(year)){
+    }else if (Number(year) > (new Date().getFullYear()) ||  year !== "" && isNaN(year) || !Number.isInteger(day)){
         errorsField[2].style.display = "none";
         errorsValid[2].style.display = 'block';
         input[2].classList.add("border-error");

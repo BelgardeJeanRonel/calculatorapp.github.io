@@ -120,6 +120,9 @@ main{
         position: absolute;
         left: 50%;
         transform: translate(-50%, 40%);
+        &:hover{
+            background-color: black;
+        }
         @include large-screen(){
             left: 90%;
         }

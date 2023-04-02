@@ -115,6 +115,9 @@ main {
   left: 50%;
   transform: translate(-50%, 40%);
 }
+.form .btn-image:hover {
+  background-color: black;
+}
 @media screen and (min-width: 500px) {
   .form .btn-image {
     left: 90%;

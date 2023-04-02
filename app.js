@@ -21,14 +21,14 @@ form.addEventListener("submit", event => {
   const label = document.querySelector(".container-date").querySelectorAll("label");
 
 
-  if (parseInt(month) === 1 || parseInt(month) === 3 || parseInt(month) === 5 || 
-  parseInt(month) === 7 || parseInt(month) === 8 || parseInt(month) === 10 || parseInt(month) === 12){
+  if (Number(month) === 1 || Number(month) === 3 || Number(month) === 5 || 
+  Number(month) === 7 || Number(month) === 8 || Number(month) === 10 || Number(month) === 12){
 
     conditionsFor31Days(day, month, year, errorsField, errorsValid, input, label);
 
-    if (parseInt(day) > 0 && parseInt(day) < 32 && parseInt(year) < (new Date().getFullYear())) {
+    if (Number(day) > 0 && Number(day) < 32 && Number(year) < (new Date().getFullYear())) {
 
-      showAge(parseInt(year), parseInt(month), parseInt(day));
+      showAge(Number(year), Number(month), Number(day));
     }else{
       document.querySelector(".show-age").innerHTML = `
         <p><span>- -</span> years</p>
@@ -37,13 +37,13 @@ form.addEventListener("submit", event => {
     `
     }
 
-  } else if (parseInt(month) === 2){
+  } else if (Number(month) === 2){
 
     conditionsFor29Days(day, month, year, errorsField, errorsValid, input, label);
 
-    if (parseInt(day) > 0 && parseInt(day) < 30 && parseInt(year) < (new Date().getFullYear())) {
+    if (Number(day) > 0 && Number(day) < 30 && Number(year) < (new Date().getFullYear())) {
 
-      showAge(parseInt(year), parseInt(month), parseInt(day));
+      showAge(Number(year), Number(month), Number(day));
 
     }else{
       document.querySelector(".show-age").innerHTML = `
@@ -53,13 +53,13 @@ form.addEventListener("submit", event => {
     `
     }
 
-  } else if (parseInt(month) === 4 || parseInt(month) === 6 || parseInt(month) === 9 || parseInt(month) === 11) {
+  } else if (Number(month) === 4 || Number(month) === 6 || Number(month) === 9 || Number(month) === 11) {
 
     conditionsFor30Days(day, month, year, errorsField, errorsValid, input, label);
     
-    if (parseInt(day) > 0 && parseInt(day) < 31 && parseInt(year) < (new Date().getFullYear())) {
+    if (Number(day) > 0 && Number(day) < 31 && Number(year) < (new Date().getFullYear())) {
 
-      showAge(parseInt(year), parseInt(month), parseInt(day));
+      showAge(Number(year), Number(month), Number(day));
   
     }else{
       document.querySelector(".show-age").innerHTML = `
