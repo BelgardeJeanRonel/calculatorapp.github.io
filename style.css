@@ -142,6 +142,7 @@ main {
 }
 .show-age span {
   color: rgb(89, 49, 200);
+  display: inline-block;
 }
 
 footer {
@@ -151,4 +152,22 @@ footer {
 }
 footer span {
   font-style: italic;
+}
+
+.reveal-loaded .reveal[class*=reveal-] {
+  opacity: 0 !important;
+  transform: translateY(-30px) !important;
+  transition: 0s !important;
+}
+
+.reveal-loaded [class*=reveal-] {
+  transition: 2s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-loaded .reveal-2 {
+  transition-delay: 1s;
+}
+
+.reveal-loaded .reveal-3 {
+  transition-delay: 2s;
 }/*# sourceMappingURL=style.css.map */

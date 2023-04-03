@@ -26,8 +26,9 @@ form.addEventListener("submit", event => {
 
     conditionsFor31Days(day, month, year, errorsField, errorsValid, input, label);
 
-    if (Number(day) > 0 && Number(day) < 32 && Number(year) < (new Date().getFullYear())) {
+    if (Number(day) > 0 && Number(day) < 32 && Number(year) < (new Date().getFullYear()) && year !=="") {
 
+      console.log("bbbb");
       showAge(Number(year), Number(month), Number(day));
     }else{
       document.querySelector(".show-age").innerHTML = `
@@ -41,7 +42,7 @@ form.addEventListener("submit", event => {
 
     conditionsFor29Days(day, month, year, errorsField, errorsValid, input, label);
 
-    if (Number(day) > 0 && Number(day) < 30 && Number(year) < (new Date().getFullYear())) {
+    if (Number(day) > 0 && Number(day) < 30 && Number(year) < (new Date().getFullYear()) && year !=="") {
 
       showAge(Number(year), Number(month), Number(day));
 
@@ -57,7 +58,7 @@ form.addEventListener("submit", event => {
 
     conditionsFor30Days(day, month, year, errorsField, errorsValid, input, label);
     
-    if (Number(day) > 0 && Number(day) < 31 && Number(year) < (new Date().getFullYear())) {
+    if (Number(day) > 0 && Number(day) < 31 && Number(year) < (new Date().getFullYear()) && year !=="") {
 
       showAge(Number(year), Number(month), Number(day));
   
@@ -80,8 +81,28 @@ form.addEventListener("submit", event => {
       
   }
 
+  const ratio = .1;
+  const options = {
+      root : null,
+      rootMargin : "0px",
+      threshold : ratio
+  }
+
+  const handleIntersect = function (entries, observer) {
+      entries.forEach( entry => {
+          if (entry.intersectionRatio > ratio){
+              entry.target.classList.remove("reveal")
+              // observer.unobserve(entry.target)
+          }
+      })
+  }
+
+  document.documentElement.classList.add("reveal-loaded");
+  const observer = new IntersectionObserver(handleIntersect, options);
+  document.querySelectorAll('.reveal').forEach( r => {
+      observer.observe(r)
+  })
+
 
 })
-
-
 

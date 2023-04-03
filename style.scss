@@ -21,7 +21,6 @@ body{
     background: hsl(0, 0%, 86%);
     margin: 0;
     padding: 0 15px;
-    // font-family: Arial, Helvetica, sans-serif;
 }
 
 header{
@@ -79,7 +78,7 @@ main{
             padding: 10px;
             margin-top: 5px;
             font-size: 1em;
-            font-family: 'Poppins', sans-serif;            ;
+            font-family: 'Poppins', sans-serif;            
             font-weight: bold;
             border: 1px solid $grisLight;
             border-radius: 5px;
@@ -145,6 +144,7 @@ main{
     }
     span{
         color: $bleue;
+        display: inline-block;
     }
 }
 
@@ -156,6 +156,29 @@ footer{
         font-style: italic;
     }
 }
+
+
+
+// ---------------------- ANIMATION AGE ----------------------
+
+.reveal-loaded .reveal[class*="reveal-"]{
+    opacity: 0 !important;
+    transform: translateY(-30px) !important;
+    transition: 0s !important;
+}
+
+.reveal-loaded [class*="reveal-"]{
+    transition: 2s cubic-bezier(.5, 0, 0, 1);
+}
+
+.reveal-loaded .reveal-2{
+    transition-delay: 1s;
+}
+
+.reveal-loaded .reveal-3{
+    transition-delay: 2s;
+}
+
 
 
 

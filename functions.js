@@ -27,12 +27,12 @@ export function showAge(y, m, d){
 
     
     document.querySelector(".show-age").innerHTML = `
-        <p><span>${years}</span> years</p>
-        <p><span>${months}</span> months</p>
-        <p><span>${days}</span> days</p>
+        <p><span class="reveal reveal-1">${years}</span> years</p>
+        <p><span class="reveal reveal-2">${months}</span> months</p>
+        <p><span class="reveal reveal-3">${days}</span> days</p>
     `
     
-      
+   
 }
 
 
