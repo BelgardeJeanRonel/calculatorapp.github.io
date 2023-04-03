@@ -85,6 +85,9 @@ main{
             &.border-error{
                 border: 1px solid $rouge;
             }
+            &:focus{
+                outline: 1px solid $bleue;
+            }
             @include large-screen(){
                 width: 120px;
                 font-size: 1.2em;

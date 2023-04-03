@@ -79,6 +79,9 @@ main {
 .form .container-date input.border-error {
   border: 1px solid red;
 }
+.form .container-date input:focus {
+  outline: 1px solid rgb(89, 49, 200);
+}
 @media screen and (min-width: 500px) {
   .form .container-date input {
     width: 120px;
