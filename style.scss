@@ -87,6 +87,7 @@ main{
             }
             &:focus{
                 outline: 1px solid $bleue;
+                border-radius: 5px;
             }
             @include large-screen(){
                 width: 120px;
