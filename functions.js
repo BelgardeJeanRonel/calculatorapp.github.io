@@ -36,7 +36,7 @@ export function showAge(y, m, d){
 }
 
 
-function dayFunction(day, input, label, errorsField, errorsValid, dayOfMonth){
+function showErrorForDayInput(day, input, label, errorsField, errorsValid, dayOfMonth){
     if (!day){
         errorsField[0].style.display = "block";
         input[0].classList.add("border-error");
@@ -55,7 +55,7 @@ function dayFunction(day, input, label, errorsField, errorsValid, dayOfMonth){
     }
 }
 
-function yearFunction(year, input, label, errorsField, errorsValid){
+function showErrorForYearInput(year, input, label, errorsField, errorsValid){
     if (!year){
         errorsField[2].style.display = "block";
         input[2].classList.add("border-error");
@@ -74,7 +74,7 @@ function yearFunction(year, input, label, errorsField, errorsValid){
     }
 }
 
-function monthFunction(month, input, label, errorsField, errorsValid, monthInYear){
+function showErrorForMonthInput(month, input, label, errorsField, errorsValid, monthInYear){
     if (!month){
         errorsField[1].style.display = "block";
         input[1].classList.add("border-error");
@@ -93,7 +93,7 @@ function monthFunction(month, input, label, errorsField, errorsValid, monthInYea
     }
 }
 
-function monthConditionsForDays(month, errorsField, errorsValid, input, label){
+function hideErrorMonth(month, errorsField, errorsValid, input, label){
     errorsField[1].style.display = "none";
     input[1].classList.remove("border-error");
     label[1].classList.remove("label-error");
@@ -109,41 +109,41 @@ function monthConditionsForDays(month, errorsField, errorsValid, input, label){
 
 export function conditionsFor31Days(day, month, year, errorsField, errorsValid, input, label){
 
-    monthConditionsForDays(month, errorsField, errorsValid, input, label);
+    hideErrorMonth(month, errorsField, errorsValid, input, label);
 
-    dayFunction(day, input, label, errorsField, errorsValid, 31);
+    showErrorForDayInput(day, input, label, errorsField, errorsValid, 31);
    
-    yearFunction(year, input, label, errorsField, errorsValid);
+    showErrorForYearInput(year, input, label, errorsField, errorsValid);
 
 }
 
 export function conditionsFor29Days(day, month, year, errorsField, errorsValid, input, label){
 
-    monthConditionsForDays(month, errorsField, errorsValid, input, label);
+    hideErrorMonth(month, errorsField, errorsValid, input, label);
 
 
-    dayFunction(day, input, label, errorsField, errorsValid, 29);
+    showErrorForDayInput(day, input, label, errorsField, errorsValid, 29);
 
-    yearFunction(year, input, label, errorsField, errorsValid);
+    showErrorForYearInput(year, input, label, errorsField, errorsValid);
 
 }
 
 export function conditionsFor30Days(day, month, year, errorsField, errorsValid, input, label){
 
-    monthConditionsForDays(month, errorsField, errorsValid, input, label);
+    hideErrorMonth(month, errorsField, errorsValid, input, label);
 
-    dayFunction(day, input, label, errorsField, errorsValid, 30);
+    showErrorForDayInput(day, input, label, errorsField, errorsValid, 30);
    
-    yearFunction(year, input, label, errorsField, errorsValid);
+    showErrorForYearInput(year, input, label, errorsField, errorsValid);
 
 }
 
 export function conditionsElse(day, month, year, errorsField, errorsValid, input, label){
 
-    monthFunction(month, input, label, errorsField, errorsValid, 12);
+    showErrorForMonthInput(month, input, label, errorsField, errorsValid, 12);
 
-    dayFunction(day, input, label, errorsField, errorsValid, 31);
+    showErrorForDayInput(day, input, label, errorsField, errorsValid, 31);
    
-    yearFunction(year, input, label, errorsField, errorsValid);
+    showErrorForYearInput(year, input, label, errorsField, errorsValid);
 
 }
